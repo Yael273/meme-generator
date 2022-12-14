@@ -4,6 +4,7 @@ var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 var gCurrImgId
 var gcurrAlign = 'center'
 var gCurrColor
+let gText
 
 // var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }];
 var gMeme = {
@@ -30,9 +31,7 @@ var gMeme = {
 }
 
 function setImg(imgId) {
-    gCurrImgId = imgId
-    console.log('gCurrImgId:', gCurrImgId)
-    return gCurrImgId
+    return gMeme.selectedImgId = imgId
 }
 
 function getMeme() {
@@ -45,11 +44,15 @@ function setLineTxt(text) {
 
 }
 
-function setAnotherLineTxt(text){
+function setAnotherLineTxt(text) {
     return gMeme.lines[1].txt = text
 }
 
-function align() {
+function setAlign(align) {
+    gcurrAlign = align
+}
+
+function alignText() {
 
     switch (gcurrAlign) {
         case 'center':
@@ -78,8 +81,33 @@ function decreaseFont() {
 }
 
 function switchLine() {
+    ////// toggle?
+
     let line1 = gMeme.lines[0].lineId
     let line2 = gMeme.lines[1].lineId
     if (line1) return line2
     else if (line2) return line1
 }
+
+function addText() {
+
+}
+
+//////////////////LINKS//////////////////
+
+
+function doUploadImg(imgDataUrl, onSuccess) {
+
+    const formData = new FormData()
+    formData.append('img', imgDataUrl)
+    console.log('formData:', formData)
+  
+    fetch('//ca-upload.com/here/upload.php', { method: 'POST', body: formData })
+        .then(res => res.text())
+        .then(url => {
+            console.log('url:', url)
+            onSuccess(url)
+        })
+}
+
+//////////////////LINKS//////////////////

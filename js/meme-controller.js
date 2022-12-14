@@ -21,7 +21,7 @@ function renderMeme() {
     img.src = `img/${meme.selectedImgId}.jpg`
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
-        drawText(meme.lines[0].txt, gElCanvas.width/2, 50)
+        drawText(meme.lines[0].txt, gElCanvas.width / 2, 50)
     }
 
 
@@ -31,14 +31,15 @@ function onImgSelect(imgId) {
     console.log('imgId:', imgId)
     setImg(imgId)
     document.querySelector('.image-container').classList.add('hidden')
+    document.querySelector('.head-container').classList.add('hidden')
     document.querySelector('.meme-container').classList.add('shown')
-    renderMeme() 
+    renderMeme()
 
 }
 
-function onSetLineTxt(ev,text) {
+function onSetLineTxt(ev, text) {
     console.log('ev:', ev)
-    if(ev.key === 'Enter') setAnotherLineTxt(text)
+    if (ev.key === 'Enter') setAnotherLineTxt(text)
     else setLineTxt(text)
     renderMeme()
     // drawText(text, 225, 225)
@@ -60,20 +61,52 @@ function drawText(text, x, y) {
     gCtx.strokeText(text, x, y)
 }
 
-function onSetColor(){
+function onSetColor() {
     setColor()
     renderMeme()
 }
 
-function onIncreaseFont(){
+function onIncreaseFont() {
     increaseFont()
     renderMeme()
 }
-function onDecreaseFont(){
+function onDecreaseFont() {
     decreaseFont()
     renderMeme()
 }
 
-function onSwitchLine(){
+function onSetAlign(align){
+    setAlign(align)
+    renderMeme()
+}
+
+function onSwitchLine() {
     switchLine()
 }
+
+function onAddText() {
+    addText()
+    renderMeme()
+}
+
+
+//////////////////LINKS//////////////////
+
+function onUploadImg() {
+    const imgDataUrl = gElCanvas.toDataURL('image/jpeg')
+
+    function onSuccess(uploadedImgUrl) {
+
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+    }
+
+    doUploadImg(imgDataUrl, onSuccess)
+}
+
+function downloadCanvas(elLink) {
+    const data = gElCanvas.toDataURL()
+    elLink.href = data
+}
+
+//////////////////LINKS//////////////////

@@ -11,10 +11,13 @@
 
 <body onload="onInit()">
 
-    <header>
+    <header class="main-header">
         <div class="logo">Meme Generator</div>
         <nav class="main-nav">
-
+            <ul class="flex clean-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Galley</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -24,24 +27,41 @@
                 <input data-trans="search-placeholder" type="search" name="txt" placeholder="search"
                     oninput="onSetFilterBy(this)" />
             </div>
-        </div>
-        <div class="image-container">
 
         </div>
+        <div class="image-container scroller">
+
+        </div>
+
         <div class="meme-container">
 
             <div class="canvas-container">
-                <canvas id="my-canvas" height="450" width="500">
+                <canvas id="my-canvas" height="500" width="500">
                 </canvas>
                 <div class="control-box">
-                    <input type="text" class="text-box" placeholder="enter text" oninput="onSetLineTxt(event, this.value)">
+                    <input type="text" class="text-box" placeholder="enter text"
+                        oninput="onSetLineTxt(event, this.value)">
                     <!-- <input type="text" class="text-box" placeholder="enter text" onkeyup="onSetLineTxt(event, this.value)"> -->
                 </div>
                 <div class="btns">
                     <input type="color" class="color" name="color" id="color" value="#000000" onchange="onSetColor()">
-                <button onclick="onIncreaseFont()">+</button>
-                <button onclick="onDecreaseFont()">-</button>
-                <button onclick="onSwitchLine()">switch Line</button>
+                    <button onclick="onIncreaseFont()">+</button>
+                    <button onclick="onDecreaseFont()">-</button>
+                    <button onclick="onSetAlign('left')">left</button>
+                    <button onclick="onSetAlign('center')">center</button>
+                    <button onclick="onSetAlign('right')">right</button>
+                    <button onclick="onSwitchLine()">switch Line</button>
+
+                </div>
+                <div class="crudl">
+                    <button onclick="onAddText()">add text</button>
+                </div>
+                <div class="links">
+                    <button class="btn" onclick="onUploadImg()">
+                        Share on facebook
+                    </button>
+
+                    <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
                 </div>
             </div>
         </div>
