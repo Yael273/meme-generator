@@ -20,10 +20,10 @@
 
     <div class="main-container">
         <div class="head-container">
-            <form class="search">
+            <div class="search">
                 <input data-trans="search-placeholder" type="search" name="txt" placeholder="search"
                     oninput="onSetFilterBy(this)" />
-            </form>
+            </div>
         </div>
         <div class="image-container">
 
@@ -34,14 +34,22 @@
                 <canvas id="my-canvas" height="450" width="500">
                 </canvas>
                 <div class="control-box">
-                    <input type="text" class="text-box" placeholder="enter text" oninput="draw()">
+                    <input type="text" class="text-box" placeholder="enter text" oninput="onSetLineTxt(event, this.value)">
+                    <!-- <input type="text" class="text-box" placeholder="enter text" onkeyup="onSetLineTxt(event, this.value)"> -->
                 </div>
-
+                <div class="btns">
+                    <input type="color" class="color" name="color" id="color" value="#000000" onchange="onSetColor()">
+                <button onclick="onIncreaseFont()">+</button>
+                <button onclick="onDecreaseFont()">-</button>
+                <button onclick="onSwitchLine()">switch Line</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="js/gallery-service.js"></script>
     <script src="js/meme-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
     <script src="js/meme-controller.js"></script>
     <script src="js/main.js"></script>
 </body>

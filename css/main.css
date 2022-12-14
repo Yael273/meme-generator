@@ -8,3 +8,12 @@ body{
 canvas{
     background-color: antiquewhite;
 }
+.hidden{
+    display: none;
+}
+.shown{
+    display: block;
+}
+img{
+    width: 50%;
+}
