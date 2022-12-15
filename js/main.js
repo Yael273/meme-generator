@@ -1,19 +1,22 @@
 'use strict'
+var gStartPos
 
 function onInit() {
     gElCanvas = document.querySelector('#my-canvas')
     gCtx = gElCanvas.getContext('2d')
 
-    
+
 
     document.querySelector('.meme-container').classList.add('hidden')
 
     renderMeme()
     renderGallery()
+    renderTextBox()
 
 }
 
-function meme(){
+
+function meme() {
     // let gallery = renderGallery()
     // gallery.display = 'none'
     // renderMeme()
@@ -23,3 +26,6 @@ function meme(){
     // renderMeme()
 }
 
+function toggleMenu() {
+    document.body.classList.toggle('menu-open')
+}

@@ -27,6 +27,7 @@ var gImgs = [
     { id: 17, url: 'img/17.jpg', keywords: ['Vladimir Putin', 'politics', 'guy', ''] },
     { id: 18, url: 'img/18.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
     { id: 19, url: 'img/19.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
+    // { id: 20, url: 'img/20.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
     { id: 19, url: 'img/19.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
     { id: 19, url: 'img/19.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
     { id: 19, url: 'img/19.jpg', keywords: ['toy story', 'toy', 'story', 'worried', ''] },
@@ -39,7 +40,7 @@ var gImgs = [
 function getImgs() {
     // return gImgs
     const images = gImgs.filter(img => (img.keywords.includes(gFilterBy.txt)))
-    console.log('images:', images)
+    // console.log('images:', images)
     if (!gFilterBy) return gImgs
     else return images
 }
@@ -49,3 +50,25 @@ function setFilterBy(filterBy) {
     console.log('gFilterBy:', gFilterBy)
     return gFilterBy
 }
+
+// function addImage() {
+//     const image = onImgInput(ev, onImageReady)
+//     gImgs.unshift(image)
+//     return image
+// }
+
+
+
+// function loadImageFromInput(ev, onImageReady) {
+//     const reader = new FileReader()
+//     // After we read the file
+//     reader.onload = (event) => {
+//         let img = new Image() // Create a new html img element
+//         img.src = event.target.result // Set the img src to the img file we read
+//         // Run the callBack func, To render the img on the canvas
+//         img.onload = () => onImageReady(img)
+//     }
+
+//     reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
+
+// }
