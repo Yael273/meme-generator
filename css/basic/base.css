@@ -1,0 +1,123 @@
+/* BASE */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Poppins, sans-serif;
+    background-color: var(--clr0);
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    color: var(--clr0);
+    background-color: var(--clr1);
+    /* height: 100%; */
+}
+
+
+.container>*:not(.full) {
+    padding: 10px;
+}
+
+canvas {
+    background-color: var(--clr1)
+}
+
+img {
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.7em;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 1.75em;
+    /* text-transform: uppercase; */
+}
+
+p {
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr0);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+input {
+    font-family: Poppins, sans-serif;
+    border: none;
+    border-radius: 1.875rem;
+    background-color: var(--clr6);
+    color: var(--clr0);
+    padding: 0 10px;
+}
+
+/* SHOWN/HIDDEN */
+
+.hidden {
+    display: none !important;
+    /* visibility: hidden; */
+}
+
+.shown {
+    display: block !important;
+    /* visibility: visible; */
+}
+
+
+/* SELECTED */
+
+.selected {
+    border: var(--clr0) dashed 2px;
+}
+
+/* MOBILE ONLY */
+
+@media (max-width: 640px) {
+    body {
+        padding: 0;
+    }
+
+}
+
+/* SMALL */
+
+@media (min-width: 640px) {
+html {
+        font-size: 14px;
+    }
+
+}
+
+/* MEDIUM */
+
+@media (min-width: 940px) {
+
+}
+
+/* LARGE */
+
+@media (min-width: 1100px) {
+
+}

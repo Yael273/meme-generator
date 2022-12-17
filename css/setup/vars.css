@@ -1,0 +1,30 @@
+:root {
+    /* pallete */
+    --clr0: #ffffff;
+    /* BODY BGCOLOR */
+    --clr1: #22252c;
+    /* IMG-CONTAINER BGCOLOR */
+    --clr2: #383b42;
+
+    --clr3: linear-gradient(-86deg, #24b958 0%, #0c98b9 100%);
+
+    --clr8: #79b0c2;
+
+    --clr4: #fefefe;
+    /* button pressed */
+    --clr5: #21ac91;
+    /* input bgcolor */
+    --clr6: #22252c;
+    /* button container */
+    --clr7: #19a59f;
+    /* bgcolor */
+    --clr9: #ebeef334;
+    /* layout */
+    --inner-padding: 260px;
+    /* --middle-padding: 30px; */
+
+    /* bp */
+    --s: 600px;
+    --m: 900px;
+    --l: 1500px;
+}

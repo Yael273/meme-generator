@@ -1,0 +1,24 @@
+/* SCROLL BAR */
+
+
+html {
+    --scrollbarBG: var(--clr1);
+    --thumbBG: var(--clr3);
+}
+
+.image-container::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+.image-container::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    /* background: var(--clr3); */
+    background-color: var(--clr8);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+

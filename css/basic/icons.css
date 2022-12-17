@@ -1,0 +1,18 @@
+/* icons */
+
+
+.fa.left::before {
+    content: "\f036";
+}
+
+.fa.center::before {
+    content: "\f039";
+}
+
+.fa.right::before {
+    content: "\f038";
+}
+
+.icon {
+    width: 50px;
+}

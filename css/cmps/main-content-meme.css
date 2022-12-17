@@ -1,0 +1,447 @@
+/* MAIN CONTENT - MEME*/
+
+.main-container .canvas-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    padding-top: 4rem;
+}
+
+.main-container .canvas-container canvas {
+    border-radius: 1.25rem;
+    border: solid 7px rgba(113, 113, 113, 0.549);
+    box-shadow: 0 0 0;
+    width: 32.8125rem;
+    height: 34.125rem;
+}
+
+.main-container .control-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 32.8125rem;
+    height: 34.125rem;
+    box-shadow: 1px 5px 0 #525356e4, inset 0 5px 0 #5b5d61e4;
+    border-radius: 1.875rem;
+    background-color: var(--clr9);
+}
+
+.main-container .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-container .canvas-container .btns {
+    width: 27.8125em;
+    height: 9.375em;
+    border-radius: 1rem;
+    background-color: var(--clr8);
+    padding-top: 1.25em;
+}
+
+.main-container .canvas-container .links .btn {
+    background-color: var(--clr8);
+    border: none;
+    color: var(--clr4);
+    border-radius: 0.3125em;
+    padding: 0.625em;
+    width: 13.125em;
+}
+
+.main-container .canvas-container .links a:hover {
+    opacity: 0.8;
+}
+
+.main-container .canvas-container .links button:hover {
+    opacity: 0.8;
+}
+
+.main-container .canvas-container .color-input input {
+    background-color: transparent;
+}
+
+.main-container .canvas-container .text-change button {
+    border: none;
+    border-radius: 0.3125rem;
+    margin: 0.3125rem;
+    width: 4.5rem;
+}
+
+.main-container .canvas-container .text-change button:hover {
+    opacity: 0.8;
+}
+
+.main-container .icon img {
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 0;
+}
+
+.main-container .btns button {
+    background-color: transparent;
+    border: none;
+    color: black;
+    border-radius: 0.3125em;
+    padding: 0.625em;
+    font-weight: bold;
+}
+
+.main-container .btns input {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+
+}
+
+.change {
+    margin: 20px;
+}
+
+.main-container .icon img {
+    width: 2.1875rem;
+}
+
+
+
+/* MOBILE ONLY */
+
+@media (max-width: 640px) {
+
+    /* MEME CONTAINER */
+    
+
+    .main-container .canvas-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-content: center;
+        padding-top: 0;
+        color: var(--clr0);
+    }
+
+    .main-container .canvas-container canvas {
+        border-radius: 1.25rem;
+        border: none;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .main-container .control-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 20px 0;
+        width: 100%;
+
+        box-shadow: none;
+        border-radius: 15px;
+
+        background-color: var(--clr8);
+        height: 50%;
+        color: var(--clr0);
+    }
+
+    .main-container .canvas-container .btns {
+        width: 95%;
+        border-radius: 5px;
+        color: var(--clr0);
+
+    }
+
+    .main-container .canvas-container .links .btn {
+        background-color: var(--clr8);
+        border: none;
+        color: var(--clr4);
+        border-radius: 0.3125em;
+        width: 13.125em;
+        color: var(--clr0);
+        margin: 0;
+    }
+
+    .main-container .canvas-container .links button {
+        border-radius: 0.3125em;
+        padding: 0.625em;
+        width: 50%;
+        margin: 20px 0;
+        color: var(--clr0);
+    }
+
+
+    .main-container .canvas-container .text-change button {
+        border: none;
+        border-radius: 0.3125rem;
+        margin: 0.3125rem;
+        width: 4.5rem;
+        height: 2.5rem;
+        color: var(--clr0);
+    }
+/* 
+    .main-container .icon img {
+        width: 1.1875rem;
+    } */
+
+    .change {
+        margin: 10px;
+    }
+
+}
+
+/* SMALL */
+
+@media (min-width: 640px) {
+
+    /* MAIN CONTENT - MEME*/
+
+
+    .main-container .canvas-container canvas {
+        border-radius: 1.25rem;
+        border: solid 7px rgba(113, 113, 113, 0.549);
+        box-shadow: 0 0 0;
+        width: 50%;
+
+    }
+
+    .main-container .canvas-container {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0;
+    }
+
+
+    .main-container .canvas-container canvas {
+        border-radius: 1.25rem;
+        border: solid 7px rgba(113, 113, 113, 0.549);
+        box-shadow: 0 0 0;
+        width: 45%;
+
+    }
+
+    .main-container .canvas-container {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0;
+    }
+
+
+    .main-container .control-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        box-shadow: none;
+        border-radius: 15px;
+
+        background-color: var(--clr8);
+        height: 100%;
+        margin: 10px;
+        color: var(--clr0);
+    }
+
+    .main-container .canvas-container .btns {
+        width: 95%;
+        height: 7.5rem;
+        border-radius: 5px;
+        color: var(--clr0);
+
+    }
+
+    .main-container .canvas-container .links .btn {
+        background-color: var(--clr8);
+        border: none;
+        color: var(--clr4);
+        border-radius: 0.3125em;
+        /* padding: 0.625em; */
+        width: 13.125em;
+        /* background-image: var(--clr3); */
+        color: var(--clr0);
+    }
+
+    .main-container .canvas-container .links button {
+        border-radius: 0.3125em;
+        padding: 0.625em;
+        width: 50%;
+        margin: 20px 0;
+        /* background-image: var(--clr3); */
+        color: var(--clr0);
+    }
+
+
+    .main-container .canvas-container .text-change button {
+        border: none;
+        border-radius: 0.3125rem;
+        margin: 0.3125rem;
+        width: 4.5rem;
+        height: 2.5rem;
+        color: var(--clr0);
+    }
+}
+
+/* MEDIUM */
+
+@media (min-width: 940px) {
+
+    /* MAIN CONTENT - MEME*/
+
+    .main-container .canvas-container {
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        padding-top: 4rem;
+
+    }
+
+
+    .main-container .canvas-container .btns {
+        width: 375px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .main-container .canvas-container .links .btn {
+        padding: 0.625em;
+        /* width: 6.5em; */
+        margin: 20px;
+    }
+
+    .main-container .control-box .input-box input {
+        padding: 10px;
+        margin: 10px;
+    }
+
+
+    .main-container .control-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 425px;
+        height: 446px;
+        background-color: var(--clr9);
+    }
+
+
+    .main-container .canvas-container canvas {
+        width: 425px;
+        height: 446px;
+    }
+
+
+
+    .main-container .canvas-container .links button {
+        padding: 0.625em;
+        width: 180px;
+
+    }
+
+    .main-container .canvas-container .links a {
+        margin: 0.625rem;
+        padding: 0.625rem 50px;
+    }
+
+    .main-container .canvas-container .text-change .align button {
+        border-radius: 0.3125rem;
+        margin: 0.3125rem;
+        width: 5rem;
+    }
+
+
+    .main-container .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .main-container .canvas-container .color-input input {
+        background-color: transparent;
+    }
+
+    .main-container .canvas-container .text-change button {
+        border: none;
+        border-radius: 0.3125rem;
+        margin: 0.3125rem;
+        width: 4.5rem;
+    }
+}
+
+/* LARGE */
+
+@media (min-width: 1100px) {
+    /* MAIN CONTENT - MEME*/
+
+    .main-container .canvas-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        padding-top: 4rem;
+    }
+
+    .main-container .canvas-container canvas {
+        border-radius: 1.25rem;
+        border: solid 7px rgba(113, 113, 113, 0.549);
+        box-shadow: 0 0 0;
+        width: 32.8125rem;
+        height: 34.125rem;
+    }
+
+    .main-container .control-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 32.8125rem;
+        height: 34.125rem;
+        box-shadow: 1px 5px 0 #525356e4, inset 0 5px 0 #5b5d61e4;
+        border-radius: 1.875rem;
+        background-color: #ebeef334;
+    }
+
+    .main-container .input-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-container .canvas-container .btns {
+        width: 27.8125em;
+        height: 9.375em;
+        border-radius: 1rem;
+        background-color: var(--clr8);
+        padding-top: 1.25em;
+    }
+
+    .main-container .canvas-container .color-input input {
+        background-color: transparent;
+    }
+
+    .main-container .canvas-container .text-change button {
+        border: none;
+        border-radius: 0.3125rem;
+        margin: 0.3125rem;
+        width: 4.5rem;
+    }
+
+}

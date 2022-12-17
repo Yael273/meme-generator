@@ -1,0 +1,132 @@
+/* HEADER */
+
+.main-header {
+    /* background-image: var(--clr3); */
+    width: 100%;
+    height: 4.5625rem;
+    border-bottom-left-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    background-color: var(--clr8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px;
+    position: sticky;
+    top: 0;
+}
+
+.main-header .logo {
+    color: var(--clr0);
+    font-size: 1.375rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.main-header .main-nav li {
+    margin: 0 20px;
+
+}
+
+.main-header .main-nav a:hover {
+    /* background-color: var(--clr4); */
+    color: var(--clr2);
+    font-weight: bold;
+    /* box-shadow: 0 3px 6px 1px rgba(0, 0, 0, 0.15); */
+    border-radius: 10px;
+}
+
+/* MOBILE ONLY */
+
+@media (max-width: 640px) {
+
+    .main-header {
+        border-radius: 0;
+        margin-right: 0;
+        position: sticky;
+        top: 0;
+        /* z-index: 1; */
+    }
+
+
+    .main-nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        height: 100vh;
+        background: rgba(69, 69, 69, 0.8);
+        border-inline-start: 1px solid rgb(0, 0, 0);
+        min-width: 200px;
+        transform: translateX(100%);
+        z-index: 2;
+
+        transition: transform .6s, box-shadow .6s;
+    }
+
+    body.menu-open .main-nav ul {
+        transform: translateX(0);
+        box-shadow: -6px 0px 14px rgb(0 0 0 / 20%);
+    }
+
+    .main-header .main-nav a {
+        display: block;
+        text-align: center;
+        padding: 30px 10px;
+        /* border-bottom: 1px solid #ccc; */
+        /* background-color: #fff; */
+
+        transition: background-color .6s;
+    }
+
+    .main-header .main-nav a:hover {
+        background-color: var(--clr5);
+    }
+
+    .main-header .main-nav a:hover {
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        color: var(--clr5);
+        box-shadow: none;
+        border-radius: none;
+    }
+
+
+    .menu-toggle-btn {
+        border-radius: 50%;
+        border: none;
+        width: 2rem;
+        height: 2rem;
+        font-weight: bold;
+        padding: 4px;
+        color: var(--clr8);
+    }
+
+}
+
+/* SMALL */
+
+@media (min-width: 640px) {
+    .menu-toggle-btn {
+        display: none;
+    }
+}
+
+/* MEDIUM */
+
+@media (min-width: 940px) {
+    .menu-toggle-btn {
+        display: none;
+    }
+}
+
+/* LARGE */
+
+@media (min-width: 1100px) {
+
+    .menu-toggle-btn {
+        display: none;
+    }
+
+}

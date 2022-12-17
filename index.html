@@ -6,90 +6,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="img/icons/meme-icon.png" type="image/x-icon">
     <title>Meme Generator</title>
 </head>
 
 <body onload="onInit()">
 
-    <div class="main-screen" onclick="toggleMenu()"></div>
+    <div class="container">
 
-    <header class="main-header">
-        <div class="logo">Meme Generator</div>
-        <nav class="main-nav">
-            <ul class="flex clean-list">
-                <li><a href="#">About</a></li>
-                <li><a href="index.html">Gallery</a></li>
-            </ul>
-            <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
+        <div class="main-screen" onclick="toggleMenu()"></div>
+
+        <header class="main-header full">
+            <div class="logo">Meme Generator</div>
+            <nav class="main-nav">
+                <ul class="flex clean-list">
+                    <!-- <li><a href="#">About</a></li> -->
+                    <li><a href="index.html">Gallery</a></li>
+                </ul>
+                <button class="menu-toggle-btn" onclick="toggleMenu()">☰</button>
         </header>
         </nav>
-    </header>
+        </header>
 
-    <div class="main-container">
-        <div class="head-container">
-            <div class="search">
-                <input data-trans="search-placeholder" type="search" name="txt" placeholder="search"
-                    oninput="onSetFilterBy(this)" />
+        <div class="main-container">
+            <div class="head-container">
+                <div class="search">
+                    <label for="myBrowser"></label>
+                    <input list="keywords" data-trans="search-placeholder" type="search" name="txt" placeholder="search"
+                        oninput="onSetFilterBy(this)" />
+                    <datalist id="keywords">
+                        <option value="guy"></option>
+                        <option value="cute"></option>
+                        <option value="funny"></option>
+                        <option value="evil"></option>
+                        <option value="trump"></option>
+                        <option value="obama"></option>
+                        <option value="jordan"></option>
+                        <option value="cry"></option>
+                        <option value="kurmit"></option>
+                        <option value="frog"></option>
+                    </datalist>
+                </div>
+                <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
             </div>
-            <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
-        </div>
-        <div class="image-container">
+            <div class="image-container">
 
-        </div>
+            </div>
 
-        <div class="meme-container">
+            <div class="meme-container">
 
-            <div class="canvas-container">
-                <canvas id="my-canvas" height="500" width="500">
-                </canvas>
-                <div class="control-box">
-                    <input type="text" class="text-box-1" id="text-box-1" placeholder="enter text"
-                        oninput="onSetLine('top',this.value)">
+                <div class="canvas-container">
+                    <canvas id="my-canvas" height="500" width="500">
+                    </canvas>
+                    <div class="control-box">
+                        <div class="input-box">
+                            <input type="text" class="text-box-1" id="text-box-1" placeholder="enter text"
+                                oninput="onSetLine('top',this.value)" onfocus="onSetLineId(0)">
+                            <!-- <button onclick="onRemoveText()">remove</button> -->
+
+                            <input type="text" class="text-box-2" id="text-box-1" placeholder="enter text"
+                                oninput="onSetLine('bottom',this.value)" onfocus="onSetLineId(1)">
+                            <!-- <button onclick="onRemoveText()">remove</button> -->
+
+                            <input type="text" class="text-box-3" id="text-box-1" placeholder="enter text"
+                                oninput="onSetLine('center',this.value)" onfocus="onSetLineId(2)">
+                            <!-- <button onclick="onRemoveText()">remove</button> -->
+                        </div>
 
 
-                    <div class="crudl">
-                        <button onclick="onAddText()">add text</button>
-                        <button onclick="onRemoveText()">remove</button>
-                        <button onclick="onReadText()">read</button>
-                    </div>
+                        <div class="btns">
+                            <div class="btn-color"></div>
+                            <label for="color-font">font:</label>
+                            <input type="color" class="color-font" name="color" id="color-font" value="#000000"
+                                onchange="onSetColor(this.value)">
+                            <label for="color-stroke">stroke:</label>
+                            <input type="color" class="color-stroke" name="color" id="color-stroke" value="#000000"
+                                onchange="onSetStrokeColor(this.value)">
+                                <div class="change">
+                            <button class="icon" onclick="onIncreaseFont()"><img src="img/icons/plus-solid.svg" alt=""></button>
+                            <button class="icon" onclick="onDecreaseFont()"><img src="img/icons/minus-solid.svg" alt=""></button>
+                            <button class="icon" onclick="onSetAlign('left')"><img src="img/icons/align-left-solid.svg"
+                                    alt=""></button>
+                            <button class="icon" onclick="onSetAlign('center')"><img
+                                    src="img/icons/align-justify-solid.svg" alt=""></button>
+                            <button class="icon" onclick="onSetAlign('right')"><img
+                                    src="img/icons/align-right-solid.svg" alt=""></button>
+                            <!-- <button onclick="onSwitchLine()">switch Line</button> -->
+                        </div>
+                        </div>
+                        <!-- <div class="container-btns"> -->
+                            <div class="links">
+                                <a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img">Download</a>
+                                <button class="btn" onclick="onUploadImg()">
+                                    Share on facebook
+                                </button>
+                            </div>
 
-                    <div class="btns">
-                        <!-- <label for="color-font">font color:</label>
-                        <input type="color" class="color-font" name="color" id="color-font" value="#000000"
-                            onchange="onSetColor(this.value)">
-                        <label for="color-stroke">stroke color:</label>
-                        <input type="color" class="color-stroke" name="color" id="color-stroke" value="#000000"
-                            onchange="onSetStrokeColor(this.value)">
-                        <button onclick="onIncreaseFont()">A+</button>
-                        <button onclick="onDecreaseFont()">A-</button>
-                        <button onclick="onSetAlign('left')">left</button>
-                        <button onclick="onSetAlign('center')">center</button>
-                        <button onclick="onSetAlign('right')">right</button>
-                        <button onclick="onSwitchLine()">switch Line</button> -->
-                    </div>
-                    <div class="emojis">
 
-                    </div>
-                    <div class="links">
-                        <button class="btn" onclick="onUploadImg()">
-                            Share on facebook
-                        </button>
-
-                        <a href="#" onclick="downloadCanvas(this)" download="my-img">Download</a>
+                        <!-- <a href="#" class="btn" onclick="downloadCanvas(this)" download="my-img">Download</a>
+                            <button class="btn" onclick="onUploadImg()">
+                                Share on facebook
+                            </button>
+                            </div> -->
                     </div>
                 </div>
             </div>
+
+
+
         </div>
+    </div>
+    </div>
 
+    <footer>
+        <div class="logo">Meme Generator</div>
+        <small>All Rights Reserved</small>
+    </footer>
+    </div>
 
-    </div>
-    </div>
-    </div>
 
     <script src="js/gallery-service.js"></script>
     <script src="js/meme-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
-    <script src="js/meme-controller.js"></script>
     <script src="js/main.js"></script>
 </body>
 
