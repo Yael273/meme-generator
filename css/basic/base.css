@@ -5,7 +5,7 @@
 }
 
 html {
-    font-family: Poppins, sans-serif;
+    font-family: poppins, sans-serif;
     background-color: var(--clr0);
 }
 
@@ -65,7 +65,7 @@ button {
 }
 
 input {
-    font-family: Poppins, sans-serif;
+    font-family: poppins, sans-serif;
     border: none;
     border-radius: 1.875rem;
     background-color: var(--clr6);
@@ -111,6 +111,6 @@ html {
 }
 
 @font-face {
-    font-family: Poppins;
+    font-family: poppins;
     src: url("../fonts/Poppins-Regular.ttf");
 }
