@@ -44,22 +44,7 @@
     box-shadow: 1px 4px 7px 0px #1e1e1e;
 }
 
-.main-container .btns button {
-    /* background-color: var(--clr8); */
-    background-color: transparent;
-    border: none;
-    color: var(--clr4);
-    border-radius: 0.3125em;
-    padding: 0.625em;
-    font-weight: bold;
-}
 
-.main-container .btns input {
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-
-}
 
 
 /* MOBILE ONLY */
