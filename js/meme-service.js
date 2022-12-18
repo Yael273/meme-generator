@@ -49,19 +49,19 @@ var gMeme = {
 
 
 
-function setImg(imgId) {
-    return gMeme.selectedImgId = imgId
-}
+// function setLineId(lineId) {
+//     return gMeme.selectedLineIdx = lineId
+// }
 
-function setLineId(lineId) {
-    return gMeme.selectedLineIdx = lineId
+function setLineIdx(lineIdx) {
+    return gMeme.selectedLineIdx = lineIdx
 }
 
 function getMeme() {
     return gMeme
 }
 
-function setFont(font){
+function setFont(font) {
     gCurrFont = font
     // getFont(font)
 }
@@ -142,20 +142,21 @@ function decreaseFont() {
     return gMeme.lines[0].size -= 2
 }
 
-function switchLine(idx) {
+function switchLine(lineIdx) {
     ////// toggle?
     // setFocusToTextBox()
-    let line1 = gMeme.lines[0]
-    console.log('line1:', line1)
-    let line2 = gMeme.lines[1]
-    console.log('line2:', line2)
-    if (line1) return line2
-    else if (line2) return line1
 
-    // var idx = setLineId()
-    // console.log('idx:', idx)
-    // if (idx === 0) return idx === 1
-    // else if (idx === 1) return idx === 0
+    if (lineIdx === 0) {
+        lineIdx += 1
+        return document.querySelector('.text-box-1').focus()
+    }
+    else if (lineIdx === 1) {
+        lineIdx -= 1
+        return document.querySelector('.text-box-0').focus()
+    }
+
+    console.log('lineIdx:', lineIdx)
+
 }
 
 

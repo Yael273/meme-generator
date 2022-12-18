@@ -28,6 +28,10 @@ function onInit() {
 
 }
 
+function toggleMenu() {
+    document.body.classList.toggle('menu-open')
+}
+
 //////////IMGS//////////
 
 function renderGallery() {
@@ -41,12 +45,11 @@ function renderGallery() {
 }
 
 function onSetFilterBy({ name, value }) {
-        const filterBy = setFilterBy({ [name]: value })
-        console.log('filterBy:', filterBy)
-        renderGallery()
+    const filterBy = setFilterBy({ [name]: value })
+    console.log('filterBy:', filterBy)
+    renderGallery()
 
 }
-
 
 function meme() {
     onImgSelect()
@@ -55,9 +58,6 @@ function meme() {
 
 }
 
-function toggleMenu() {
-    document.body.classList.toggle('menu-open')
-}
 
 function onImgSelect(imgId) {
     console.log('imgId:', imgId)
@@ -65,6 +65,13 @@ function onImgSelect(imgId) {
     document.querySelector('.image-container').classList.add('hidden')
     document.querySelector('.head-container').classList.add('hidden')
     document.querySelector('.meme-container').classList.add('shown')
+    renderMeme()
+
+}
+function onLineSelect(lineIdx) {
+    console.log('lineIdx:', lineIdx)
+    setLineIdx(lineIdx)
+    // document.querySelector('.image-container').classList.add('hidden')
     renderMeme()
 
 }
@@ -81,7 +88,7 @@ function renderMeme() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
         renderText()
-        renderAnotherText()
+        // renderAnotherText()
     }
 
 
@@ -92,15 +99,15 @@ function renderMeme() {
 function renderTextBox() {
 
     let meme = getMeme()
-    const idx = meme.selectedLineIdx
+    let idx = meme.selectedLineIdx
     const strHTMLs = `
     <label for="color-font"></label>
-    <input type="text" class="text-box-1" id="text-box" placeholder="Enter text"
-    oninput="onSetLine('top',this.value)" onfocus="onSetLineId(0)">
+    <input type="text" class="text-box-${idx++}" id="text-box" placeholder="Enter text"
+    oninput="onSetLine('top',this.value)" onfocus="onSwitchLine(this)">
 
     <label for="color-font"></label>
-    <input type="text" class="text-box-2" id="text-box" placeholder="Enter text"
-    oninput="onSetLine('bottom',this.value)" onfocus="onSetLineId(1)">
+    <input type="text" class="text-box-${idx++}" id="text-box" placeholder="Enter text"
+    oninput="onSetLine('bottom',this.value)" onfocus="onSwitchLine(this)">
     
     <!--<button onclick="onRemoveText(1)">remove</button> -->
     
@@ -129,6 +136,21 @@ function drawText(text, x, y) {
     gCtx.textAlign = gMeme.lines[0].align
     gCtx.textBaseline = 'middle'
     gCtx.stroke = gMeme.lines[0].stroke
+
+    gCtx.fillText(text, x, y)
+    gCtx.strokeText(text, x, y)
+
+}
+function drawAnotherText(text, x, y) {
+    gCtx.lineWidth = 2
+    gCtx.strokeStyle = gMeme.lines[1].stroke
+    gCtx.fillStyle = gMeme.lines[1].color
+    gCtx.font = gMeme.lines[1].size + 'px Impact'
+    // gCtx.fontsize = gMeme.lines[1].size + 'px'
+    // gCtx.fontFamily = 'Impact'
+    gCtx.textAlign = gMeme.lines[1].align
+    gCtx.textBaseline = 'middle'
+    gCtx.stroke = gMeme.lines[1].stroke
 
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
@@ -179,10 +201,10 @@ function onAddText() {
     renderMeme()
 }
 
-// function onSwitchLine(){
-//     switchLine()
-//     renderMeme()
-// }
+function onSwitchLine(lineIdx){
+    switchLine(lineIdx)
+    renderMeme()
+}
 
 //////////////////LINKS//////////////////
 
@@ -218,7 +240,8 @@ function renderAnotherText() {
     const meme = getMeme()
 
     const { pos, color, size } = getTextDrag()
-
+    // drawText(meme.lines[1].txt, pos.x, pos.y + 400)
+    drawAnotherText(meme.lines[1].txt, pos.x, pos.y + 400)
 }
 
 //Handle the listeners

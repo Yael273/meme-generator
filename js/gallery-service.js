@@ -44,3 +44,7 @@ function setFilterBy(filterBy) {
     gFilterBy = { ...filterBy }
     return gFilterBy
 }
+
+function setImg(imgId) {
+    return gMeme.selectedImgId = imgId
+}
